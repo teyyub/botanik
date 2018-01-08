@@ -16,7 +16,7 @@
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="290.0" prefWidth="940.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="940.0">
                <children>
                   <GridPane layoutY="-8.0" prefHeight="268.0" prefWidth="932.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
