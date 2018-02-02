@@ -1,5 +1,7 @@
 package com.botanik.model;
  
+import java.util.Date;
+
 
 /**
  *
@@ -16,6 +18,31 @@ public class Specimen {
 //    private int herbarNo;
   
     private int number;
+    private Number institution_id;
+    private String nbr;
+    private int garden_id;
+    private int taxon_id;
+    private int typified_id;
+    private int series_id;
+    private Date date;
+    
+    private int country_id;
+    private String locality;
+    private String annotation;
+    private String ser_nr;
+    private boolean accessible;
+    private boolean dg_image;
+    private boolean dg_im_obs;
+    private boolean checked;
+    private String herba_no;
+    private int collection_id;
+    private int type_id;
+    private int voucher_id;
+    private String def_Ref_conf;
+    private int first_collector_id;
+    private int add_collector_id;
+    private int status_id;
+    
 //    private String region;
 //    private String state_or_province;
 //    private String series;
@@ -252,5 +279,197 @@ public class Specimen {
 //    public void setGarden(String garden) {
 //        this.garden = garden;
 //    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public Number getInstitution_id() {
+        return institution_id;
+    }
+
+    public void setInstitution_id( Number institution_id) {
+        this.institution_id = institution_id;
+    }
+
+    public String getNbr() {
+        return nbr;
+    }
+
+    public void setNbr(String nbr) {
+        this.nbr = nbr;
+    }
+
+    public int getGarden_id() {
+        return garden_id;
+    }
+
+    public void setGarden_id(int garden_id) {
+        this.garden_id = garden_id;
+    }
+
+    public int getTaxon_id() {
+        return taxon_id;
+    }
+
+    public void setTaxon_id(int taxon_id) {
+        this.taxon_id = taxon_id;
+    }
+
+    public int getTypified_id() {
+        return typified_id;
+    }
+
+    public void setTypified_id(int typified_id) {
+        this.typified_id = typified_id;
+    }
+
+    public int getSeries_id() {
+        return series_id;
+    }
+
+    public void setSeries_id(int series_id) {
+        this.series_id = series_id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getCountry_id() {
+        return country_id;
+    }
+
+    public void setCountry_id(int country_id) {
+        this.country_id = country_id;
+    }
+
+    public String getLocality() {
+        return locality;
+    }
+
+    public void setLocality(String locality) {
+        this.locality = locality;
+    }
+
+    public String getAnnotation() {
+        return annotation;
+    }
+
+    public void setAnnotation(String annotation) {
+        this.annotation = annotation;
+    }
+
+    public String getSer_nr() {
+        return ser_nr;
+    }
+
+    public void setSer_nr(String ser_nr) {
+        this.ser_nr = ser_nr;
+    }
+
+    public boolean isAccessible() {
+        return accessible;
+    }
+
+    public void setAccessible(boolean accessible) {
+        this.accessible = accessible;
+    }
+
+    public boolean isDg_image() {
+        return dg_image;
+    }
+
+    public void setDg_image(boolean dg_image) {
+        this.dg_image = dg_image;
+    }
+
+    public boolean isDg_im_obs() {
+        return dg_im_obs;
+    }
+
+    public void setDg_im_obs(boolean dg_im_obs) {
+        this.dg_im_obs = dg_im_obs;
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
+    public String getHerba_no() {
+        return herba_no;
+    }
+
+    public void setHerba_no(String herba_no) {
+        this.herba_no = herba_no;
+    }
+
+    public int getCollection_id() {
+        return collection_id;
+    }
+
+    public void setCollection_id(int collection_id) {
+        this.collection_id = collection_id;
+    }
+
+    public int getType_id() {
+        return type_id;
+    }
+
+    public void setType_id(int type_id) {
+        this.type_id = type_id;
+    }
+
+    public int getVoucher_id() {
+        return voucher_id;
+    }
+
+    public void setVoucher_id(int voucher_id) {
+        this.voucher_id = voucher_id;
+    }
+
+    public String getDef_Ref_conf() {
+        return def_Ref_conf;
+    }
+
+    public void setDef_Ref_conf(String def_Ref_conf) {
+        this.def_Ref_conf = def_Ref_conf;
+    }
+
+    public int getFirst_collector_id() {
+        return first_collector_id;
+    }
+
+    public void setFirst_collector_id(int first_collector_id) {
+        this.first_collector_id = first_collector_id;
+    }
+
+    public int getAdd_collector_id() {
+        return add_collector_id;
+    }
+
+    public void setAdd_collector_id(int add_collector_id) {
+        this.add_collector_id = add_collector_id;
+    }
+
+    public int getStatus_id() {
+        return status_id;
+    }
+
+    public void setStatus_id(int status_id) {
+        this.status_id = status_id;
+    }
 
 }

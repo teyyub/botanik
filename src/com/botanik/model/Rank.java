@@ -6,4 +6,9 @@ package com.botanik.model;
  */
 public class Rank extends Base{
 
+    @Override
+    public String toString() {
+        return super.getName(); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

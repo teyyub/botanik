@@ -9,6 +9,13 @@ public class Region {
     private Number id;
     private String name;
 
+    public Region(String name) {
+        this.name = name;
+    }
+
+    public Region() {
+    }
+
     public Number getId() {
         return id;
     }

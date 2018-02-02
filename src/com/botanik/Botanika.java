@@ -26,6 +26,7 @@ public class Botanika extends Application {
         this.primaryStage.setTitle("Botanika");
         initRootLayout();
         showSpecimenOverview();
+        loadLeftMenu();
 //        Scene scene = new Scene(root);
 
 //        stage.setScene(scene);
@@ -61,6 +62,22 @@ public class Botanika extends Application {
             rootLayout.setCenter(specimenOverview);
             SpecimenOverviewController controller = loader.getController();
             controller.setBotanik(this);
+        } catch (IOException e) {
+            e.getLocalizedMessage();
+        }
+    }
+
+    public void loadLeftMenu() {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Botanika.class.getResource("view/LeftMenu.fxml"));
+            AnchorPane leftMenu = (AnchorPane) loader.load();
+
+            // Set person overview into the center of root layout.
+            rootLayout.setLeft(leftMenu);
+//            SpecimenOverviewController controller = loader.getController();
+//            controller.setBotanik(this);
         } catch (IOException e) {
             e.getLocalizedMessage();
         }

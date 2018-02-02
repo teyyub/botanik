@@ -11,6 +11,24 @@ public class Base implements Serializable{
     private Number id;
     private String name;
     private String daoStatus;
+
+    public Base(Number id, String name, String daoStatus) {
+        this.id = id;
+        this.name = name;
+        this.daoStatus = daoStatus;
+    }
+
+    public Base(Number id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Base() {
+    }
+
+    public Base(String name) {
+        this.name = name;
+    }
     
     
     public Number getId() {

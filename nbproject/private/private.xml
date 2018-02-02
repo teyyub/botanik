@@ -3,57 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/SubVarAuthor.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Base.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Genus.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Collector.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/Utility/SQLQuery.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Family.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/VarAuthor.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/DAOUtil.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Menu.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/FirstCollector.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/BotanikCategory.java</file>
+            <file>file:/F:/git_hubs/Botanika/src/com/botanik/controller/AddSpecimenController.java</file>
+            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Status.java</file>
+            <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/impl/ContinentDAOJDBC.java</file>
             <file>file:/F:/git_hubs/Botanika/src/com/botanik/controller/SpecimenOverviewController.java</file>
             <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/intf/ContinentDAO.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Printer.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Taxon.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/VarEpithet.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Message.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Specimen.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/view/epitetDialog.fxml</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/MyModel.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/view/SpecimenOverview.fxml</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/DAOFactory.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/BotanikType.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/view/mainLayout.fxml</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Institution.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Collection.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/SubFormaAuthor.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Rule.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/User.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Listing.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/DAOProperties.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/SubFormaEpithet.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Continent.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Region.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/controller/AddSpecimenController.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Author.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/Botanika.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Source.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/SubAuthor.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Status.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Epithet.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/view/AddSpecimen.fxml</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/impl/ContinentDAOJDBC.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/SubEpithet.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/SubVarEpithet.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Category.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Literature.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Voucher.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Country.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Editor.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Serie.java</file>
+            <file>file:/F:/git_hubs/Botanika/src/com/botanik/controller/TaxonController.java</file>
             <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Rank.java</file>
         </group>
     </open-files>
