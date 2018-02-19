@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/controller/AddSpecimenController.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Status.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/impl/ContinentDAOJDBC.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/controller/SpecimenOverviewController.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/dao/intf/ContinentDAO.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/controller/TaxonController.java</file>
-            <file>file:/F:/git_hubs/Botanika/src/com/botanik/model/Rank.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

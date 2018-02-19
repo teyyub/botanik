@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="228.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.botanik.controller.AuthorController">
+   <children>
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="228.0" prefWidth="482.0" style="-fx-background-color: D09C00;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="90.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.0" minWidth="10.0" prefWidth="392.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="151.0" minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="ID" GridPane.halignment="CENTER" />
+            <Label text="Author" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label text="Brummit" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label text="Label" GridPane.columnIndex="1" />
+            <TextField fx:id="author_field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#saveAuthor" text="Save" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <TextArea fx:id="brummit_field" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -33,6 +33,9 @@
             </custompostprocess>
         </target>
 
+
+
+
     Example of calling an Ant task from JavaFX SDK. Note that access to JavaFX SDK Ant tasks must be
     initialized; to ensure this is done add the dependence on -check-jfx-sdk-version target:
 
@@ -50,4 +53,17 @@
     nbproject/build-impl.xml and nbproject/jfx-impl.xml.
 
     -->
+    <target name="-post-jfx-deploy">
+        <fx:deploy width="${javafx.run.width}" height="${javafx.run.height}" 
+                   nativeBundles="all" outdir="${basedir}/${dist.dir}" outfile="${application.title}">
+            <fx:application name="${application.title}" mainClass="${javafx.main.class}"/>             
+            <fx:platform basedir="${java.home}"/> 
+            <fx:resources>                
+                <fx:fileset dir="${basedir}/${dist.dir}" includes="*.jar"/>
+                <fx:fileset dir="${basedir}" type="data" includes="src/**" /> 
+            </fx:resources>
+            <fx:info title="${application.title}" 
+                     vendor="${application.vendor}"/>
+        </fx:deploy>          
+    </target>
 </project>

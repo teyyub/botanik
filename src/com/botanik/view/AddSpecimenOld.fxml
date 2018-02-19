@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="878.0" prefWidth="1163.0" style="-fx-background-color: D09C00;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.botanik.controller.AddSpecimenController">
+   <children>
+      <CheckBox fx:id="accessible_check" layoutX="529.0" layoutY="40.0" mnemonicParsing="false" text="accessible" />
+      <Label layoutX="40.0" layoutY="43.0" text="Specimen_id" />
+      <Label fx:id="id_label" layoutX="130.0" layoutY="43.0" text="Label" />
+      <CheckBox fx:id="dg_img_check" layoutX="198.0" layoutY="40.0" mnemonicParsing="false" text="dg.image" />
+      <CheckBox fx:id="dg_im_obs_check" layoutX="307.0" layoutY="40.0" mnemonicParsing="false" text="dg,im.obs" />
+      <CheckBox fx:id="checked_check" layoutX="406.0" layoutY="40.0" mnemonicParsing="false" text="checked" />
+      <Label layoutX="37.0" layoutY="92.0" text="Institution" />
+      <ComboBox fx:id="institutionCombo" layoutX="109.0" layoutY="88.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="249.0" />
+      <Label layoutX="368.0" layoutY="92.0" text="Herba No" />
+      <TextField layoutX="427.0" layoutY="88.0" />
+      <Label layoutX="607.0" layoutY="94.0" text="Collection" />
+      <ComboBox fx:id="collection_combo" layoutX="676.0" layoutY="90.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="615.0" layoutY="133.0" text="Nr" />
+      <TextField layoutX="676.0" layoutY="129.0" />
+      <ComboBox fx:id="status_combo" layoutX="108.0" layoutY="134.0" prefHeight="25.0" prefWidth="249.0" />
+      <Label layoutX="37.0" layoutY="138.0" text="Status" />
+      <TextField fx:id="garden_field" layoutX="427.0" layoutY="126.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="372.0" layoutY="133.0" text="Garden" />
+      <Label layoutX="851.0" layoutY="92.0" text="Type" />
+      <ComboBox fx:id="ttypeCombo" layoutX="887.0" layoutY="90.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="162.0" />
+      <Label layoutX="839.0" layoutY="133.0" text="Voucher" />
+      <ComboBox fx:id="voucherCombo" layoutX="886.0" layoutY="129.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="162.0" />
+      <Label layoutX="35.0" layoutY="175.0" text="Taxon" />
+      <TextField fx:id="taxon_field" layoutX="109.0" layoutY="171.0" prefHeight="25.0" prefWidth="928.0" />
+      <Label layoutX="25.0" layoutY="237.0" text="det / ref / conf" />
+      <TextField fx:id="def_rev_conf_field" layoutX="110.0" layoutY="220.0" prefHeight="25.0" prefWidth="928.0" />
+      <Label layoutX="31.0" layoutY="294.0" text="typified by" />
+      <TextField fx:id="typified_by_field" layoutX="103.0" layoutY="275.0" prefHeight="25.0" prefWidth="936.0" />
+      <Label layoutX="832.0" layoutY="340.0" text="ser.Nr" />
+      <TextField layoutX="893.0" layoutY="328.0" />
+      <Label layoutX="35.0" layoutY="332.0" text="Series" />
+      <TextField fx:id="series_field" layoutX="103.0" layoutY="328.0" prefHeight="25.0" prefWidth="655.0" />
+      <Label layoutX="20.0" layoutY="381.0" text="First Collector" />
+      <TextField layoutX="110.0" layoutY="377.0" prefHeight="25.0" prefWidth="928.0" />
+      <Button layoutX="1007.0" layoutY="773.0" mnemonicParsing="false" onAction="#saveSpecimen" prefHeight="25.0" prefWidth="98.0" text="Save" />
+      <Label layoutX="22.0" layoutY="433.0" prefHeight="0.0" prefWidth="44.0" text="Number" />
+      <TextField fx:id="number_field" layoutX="103.0" layoutY="429.0" />
+      <TextField layoutX="364.0" layoutY="429.0" />
+      <Label layoutX="293.0" layoutY="433.0" text="alt.Nr" />
+      <Label layoutX="597.0" layoutY="434.0" text="Date" />
+      <DatePicker layoutX="667.0" layoutY="429.0" prefHeight="25.0" prefWidth="149.0" />
+      <DatePicker layoutX="864.0" layoutY="429.0" />
+      <Label layoutX="23.0" layoutY="485.0" text="Add Collector" />
+      <TextField fx:id="collector_field" layoutX="102.0" layoutY="481.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="936.0" />
+      <Label layoutX="19.0" layoutY="529.0" text="Country" />
+      <ComboBox fx:id="country_combo" layoutX="100.0" layoutY="525.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="314.0" />
+      <Label layoutX="448.0" layoutY="529.0" text="Province" />
+      <ComboBox layoutX="505.0" layoutY="525.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="258.0" />
+      <Label layoutX="62.0" layoutY="616.0" text="Locality" />
+      <TextArea fx:id="locality_field" layoutX="67.0" layoutY="610.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="annotation_field" layoutX="199.0" layoutY="597.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="68.0" layoutY="578.0" text="annotation" />
+      <Label layoutX="486.0" layoutY="605.0" text="habitat phorophte" />
+      <TextArea layoutX="627.0" layoutY="589.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="935.0" layoutY="599.0" text="iden history " />
+      <TextField fx:id="ident_his_field" layoutX="1035.0" layoutY="582.0" />
+      <Label layoutX="860.0" layoutY="569.0" text="alt.Nbr" />
+      <TextField layoutX="910.0" layoutY="543.0" />
+      <Label layoutX="963.0" layoutY="627.0" text="genomes" />
+      <Button layoutX="1056.0" layoutY="171.0" mnemonicParsing="false" onAction="#addNewTaxonClicked" text="Add" />
+      <Button layoutX="1048.0" layoutY="377.0" mnemonicParsing="false" onAction="#addFirstCollector" text="Add" />
+      <Button layoutX="1056.0" layoutY="481.0" mnemonicParsing="false" onAction="#addCollectorClicked" text="Add" />
+      <ComboBox layoutX="672.0" layoutY="810.0" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="157.0" />
+      <Label layoutX="864.0" layoutY="648.0" text="habitus" />
+      <Button layoutX="892.0" layoutY="672.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="763.0" layoutY="328.0" mnemonicParsing="false" onAction="#addSeries" text="Add" />
+      <Button fx:id="addVoucher" layoutX="1057.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="1056.0" layoutY="88.0" mnemonicParsing="false" onAction="#addType" text="Add" />
+   </children>
+</AnchorPane>

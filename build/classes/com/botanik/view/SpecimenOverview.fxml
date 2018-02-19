@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,11 +14,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="663.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.botanik.controller.SpecimenOverviewController">
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="663.0" prefWidth="942.0" style="-fx-background-color: D09C00;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.botanik.controller.SpecimenOverviewController">
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="0.0" prefHeight="270.0" prefWidth="940.0">
+          <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="0.0" prefHeight="270.0" prefWidth="940.0" style="-fx-background-color: D09C00;">
                <children>
                   <GridPane prefHeight="270.0" prefWidth="940.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
@@ -26,8 +27,8 @@
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="171.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="58.0" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -35,46 +36,42 @@
                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" text="Institution" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="Continent" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-                        <Label text="Taxon" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <Label text="Peridical" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                        <Label text="Country" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <Label text="Region" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                        <Label text="Series" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Label text="Herba No" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Label text="State/Provience" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                        <ComboBox fx:id="continentCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="155.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                        <ComboBox fx:id="countryCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="155.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="regionCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="156.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Search" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" onAction="#addSpecimen" prefHeight="25.0" prefWidth="70.0" text="Add" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
-                        <Button mnemonicParsing="false" onAction="#addRegionsFile" text="Bütün regionlar" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                        <Label text="Family" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Label text="Collector" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label text="Taxon" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label text="Country" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label text="Region" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Label text="Herba No" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <TextField fx:id="family_field" prefHeight="42.0" prefWidth="342.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="taxon_field" prefHeight="42.0" prefWidth="342.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="number_field" prefHeight="42.0" prefWidth="342.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="countryCombo" maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="342.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="regionCombo" maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="342.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" onAction="#searchSpecimen" prefHeight="25.0" prefWidth="64.0" text="Search" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                        <Button mnemonicParsing="false" onAction="#addSpecimen" prefHeight="25.0" prefWidth="70.0" text="Add" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+                        <Label text="Family" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
                         <Label text="Date" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="date_field" prefHeight="42.0" prefWidth="342.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                        <RadioButton mnemonicParsing="false" selected="true" text="all records" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                        <RadioButton mnemonicParsing="false" text="type records" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <RadioButton mnemonicParsing="false" text="record containing images" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="940.0">
                <children>
-                  <TableView fx:id="overviewTable" layoutX="173.0" layoutY="6.0" prefHeight="321.0" prefWidth="940.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
+                  <TableView fx:id="searchTable" layoutX="173.0" layoutY="6.0" prefHeight="321.0" prefWidth="940.0" style="-fx-background-color: D09C00;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="taxonColumn" prefWidth="75.0" text="Taxon" />
+                        <TableColumn fx:id="collectorColumn" prefWidth="75.0" text="Collector" />
+                        <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+                        <TableColumn prefWidth="75.0" text="X/Y" />
+                      <TableColumn fx:id="locationColumn" prefWidth="75.0" text="Location" />
+                      <TableColumn fx:id="typusColumn" prefWidth="75.0" text="Typus" />
+                        <TableColumn fx:id="collectionColumn" prefWidth="75.0" text="Collection" />
+                        <TableColumn prefWidth="75.0" text="Barcode" />
+                        <TableColumn prefWidth="128.0" text="Standard Label" />
                     </columns>
                   </TableView>
                </children>

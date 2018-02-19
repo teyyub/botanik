@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -9,13 +10,14 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.botanik.controller.TaxonController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="1035.0" style="-fx-background-color: D09C00;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.botanik.controller.TaxonController">
    <children>
-      <GridPane layoutX="375.0" layoutY="185.0" prefHeight="576.0" prefWidth="814.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane layoutX="375.0" layoutY="185.0" prefHeight="574.0" prefWidth="882.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="10.0" prefWidth="263.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="63.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="10.0" prefWidth="104.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="166.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.0" minWidth="10.0" prefWidth="252.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="42.0" />
         </columnConstraints>
@@ -44,33 +46,51 @@
             <Label text="Subvariety" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
             <Label text="Forma" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
             <Label text="Subforma" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-            <Label text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-            <Label text="tax.Status" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#labelClicked" text="Author" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Label text="Author" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label text="Author" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Label text="Author" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Label text="Author" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-            <Label text="Author" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-            <TextField fx:id="author1TextField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="accepted Taxon" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+            <Label text="tax.Status" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label onMouseClicked="#labelClicked" text="Author" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label text="Author" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label text="Author" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+            <Label text="Author" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+            <Label text="Author" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+            <Label text="Author" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+            <TextField fx:id="author1TextField" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <TextField fx:id="author2TextField" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <TextField fx:id="author3TextField" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <TextField fx:id="author4TextField" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <TextField fx:id="author5TextField" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <TextField fx:id="author6TextField" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <TextField fx:id="species_field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="sub_species_field" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="variety_field" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="sub_variety_field" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="forma_field" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="sub_forma_field" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <ComboBox fx:id="rankCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ComboBox fx:id="taxStatusCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="159.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ComboBox fx:id="taxStatusCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="159.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <Label text="Taxon Id" GridPane.halignment="CENTER" />
             <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1" />
-            <ComboBox accessibleRole="CHECK_BOX" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="621.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="9" />
-            <ComboBox maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="11" GridPane.rowSpan="2" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="11" GridPane.rowSpan="2" />
+            <Button mnemonicParsing="false" onAction="#addAuthor" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#addAuthor" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#addAuthor" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" onAction="#addAuthor" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+            <Button mnemonicParsing="false" onAction="#addAuthor" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Button mnemonicParsing="false" onAction="#addAuthor" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Button mnemonicParsing="false" onAction="#addSpecies" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Button mnemonicParsing="false" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+            <Button mnemonicParsing="false" onAction="#addSpecies" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button mnemonicParsing="false" onAction="#addSpecies" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button mnemonicParsing="false" onAction="#addSpecies" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" onAction="#addSpecies" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#addSpecies" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="genus_field" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#addGenus" text="Add" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label text="Basionym" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+            <Label text="annotations" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+            <Button mnemonicParsing="false" onAction="#saveTaxon" text="Save" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="13" />
+            <TextField GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="9" />
+            <TextField GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="10" />
          </children>
       </GridPane>
    </children>
