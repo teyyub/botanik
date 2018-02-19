@@ -44,7 +44,7 @@ import org.controlsfx.control.textfield.TextFields;
  * @author teyyub
  */
 public class TaxonController {
-
+    
     ContinentDAO continentDAO = new ContinentDAOJDBC();
     AuthorDAO authorDAO = new AuthorDAOJDBC();
     GenusDAO genusDAO = new GenusDAOJDBC();
@@ -54,11 +54,11 @@ public class TaxonController {
     @FXML
     private ComboBox rankCombo;
     ObservableList<Rank> rankList;
-
+    
     @FXML
     private ComboBox taxStatusCombo;
     ObservableList<Status> statusList;
-
+    
     @FXML
     private TextField author1TextField, author2TextField, author3TextField, author4TextField, author5TextField, author6TextField;
     @FXML
@@ -87,32 +87,34 @@ public class TaxonController {
     Map<String, Number> mapAuthor = new HashMap();
     Map<String, Number> mapSpecies = new HashMap();
     
-    
     private Stage dialogStage;
-
+    
     public TaxonController() {
-
+        
         System.out.println("default constructor");
     }
-
+    
     @FXML
-    public void initialize() {   
+    public void initialize() {        
         System.out.println("init Taxon controller");
         loadGenusAutocomplete();
-        loadAuthorAutocomplete(); 
-        loadSpeciesAutcomplete();   
+        loadAuthorAutocomplete();        
+        loadSpeciesAutcomplete();        
     }
-    private void loadGenuses(){
+
+    private void loadGenuses() {
         genuses = genusDAO.getGenuses();
-        for(Genus g :genuses){
+        for (Genus g : genuses) {
             mapGenus.put(g.getName(), g.getId());
         }
     }
-    private void loadGenusAutocomplete(){
+
+    private void loadGenusAutocomplete() {
         loadGenuses();
         bindAutoCompletionGenus = TextFields.bindAutoCompletion(genus_field, genuses);
     }
-    private void loadAuthorAutocomplete(){
+
+    private void loadAuthorAutocomplete() {
         loadAuthors();
         bindAutoCompletion = TextFields.bindAutoCompletion(author1TextField, authors);
         bindAutoCompletion = TextFields.bindAutoCompletion(author2TextField, authors);
@@ -121,7 +123,8 @@ public class TaxonController {
         bindAutoCompletion = TextFields.bindAutoCompletion(author5TextField, authors);
         bindAutoCompletion = TextFields.bindAutoCompletion(author6TextField, authors);
     }
-    private void loadSpeciesAutcomplete(){
+
+    private void loadSpeciesAutcomplete() {
         loadSpecies();
         bindAutoCompletionSpecies = TextFields.bindAutoCompletion(species_field, specieses);
         bindAutoCompletionSpecies = TextFields.bindAutoCompletion(sub_species_field, specieses);
@@ -134,44 +137,44 @@ public class TaxonController {
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
-
+    
     private void loadAuthors() {
         authors = authorDAO.getAuthors();
-        for (Author a :authors){
+        for (Author a : authors) {
             mapAuthor.put(a.getName(), a.getId());
         }
     }
-
+    
     private void loadSpecies() {
-        specieses  = authorDAO.getSpecies();
-        for (Species s :specieses){
+        specieses = authorDAO.getSpecies();
+        for (Species s : specieses) {
             mapAuthor.put(s.getName(), s.getId());
         }
     }
-
+    
     public void setBotanika(Botanika botanika) {
 //        mainApp = botanika;
     }
-
+    
     @FXML
     private void addNewTaxonClicked() {
-
+        
     }
-
+    
     public void loadRankList() {
         System.out.println("loadRankList");
         rankList = FXCollections.observableArrayList(continentDAO.getRanks());
         rankCombo.setItems(rankList);
-
+        
     }
-
+    
     public void loadTaxStatusList() {
         System.out.println("loadTaxStatusList");
         statusList = FXCollections.observableArrayList(continentDAO.getTaxStatus());
         taxStatusCombo.setItems(statusList);
-
+        
     }
-
+    
     @FXML
     private void labelClicked() {
         System.out.println("label clikced");
@@ -180,7 +183,6 @@ public class TaxonController {
 
 //            Dialog<Pair<String, String>> dialog = new Dialog<>();
 //            Optional<Pair<String, String>> result = dialog.showAndWait();
-
 //            FXMLLoader loader = new FXMLLoader();
 //            loader.setLocation(Botanika.class.getResource("view/epitetDialog.fxml"));
 //
@@ -192,28 +194,29 @@ public class TaxonController {
 //            dialogStage.setScene(scene);
         } catch (Exception e) {
             System.out.println("exception in addNewTaxonClicked " + e);
-
+            
         }
     }
-
+    
     @FXML
     private void addAuthor() {
         try {
             System.out.println("addAuthor clicked");
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Botanika.class.getResource("view/Author.fxml"));
-
+            
             AnchorPane page = (AnchorPane) loader.load();
-
+            
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Add Author");
             dialogStage.initModality(Modality.APPLICATION_MODAL);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.setResizable(false);
             AuthorController controller = loader.getController();
             controller.setDialogStage(dialogStage);
-
+            
             dialogStage.showAndWait();
             System.out.println("close addauthor dialog");
             loadAuthors();
@@ -225,19 +228,19 @@ public class TaxonController {
             bindAutoCompletion = TextFields.bindAutoCompletion(author6TextField, authors);
         } catch (Exception e) {
             System.out.println("exception in addAuthorClicked " + e);
-
+            
         }
     }
-
+    
     @FXML
     private void addSpecies() {
         try {
             System.out.println("addAuthor clicked");
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Botanika.class.getResource("view/Specy.fxml"));
-
+            
             AnchorPane page = (AnchorPane) loader.load();
-
+            
             DialogController controller = loader.getController();
 //
 //            controller.loadRankList();
@@ -263,19 +266,19 @@ public class TaxonController {
 //            bindAutoCompletion = TextFields.bindAutoCompletion(author6TextField, authors);
         } catch (Exception e) {
             System.out.println("exception in addSpecyClicked " + e);
-
+            
         }
     }
-
+    
     @FXML
     private void addGenus() {
         try {
             System.out.println("addGenus clicked");
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Botanika.class.getResource("view/Genus.fxml"));
-
+            
             AnchorPane page = (AnchorPane) loader.load();
-
+            
             GenusController controller = loader.getController();
 //
 //            controller.loadRankList();
@@ -283,21 +286,22 @@ public class TaxonController {
 //        // Create the dialog Stage.
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Add Genus");
-
+            
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
             controller.setDialogStage(dialogStage);
             
             dialogStage.showAndWait();
             System.out.println("close addGenus dialog");
-            loadGenusAutocomplete(); 
+            loadGenusAutocomplete();            
         } catch (Exception e) {
             System.out.println("exception in addGenusClicked " + e);
-
+            
         }
     }
+
     @FXML
-    private void saveTaxon(){
+    private void saveTaxon() {
         Taxon t = new Taxon();
         Number genus_id = mapGenus.get(genus_field.getText());
         Rank rank = (Rank) rankCombo.getSelectionModel().getSelectedItem();
@@ -334,5 +338,5 @@ public class TaxonController {
         taxonDAO.saveTaxon(t);
         dialogStage.close();
     }
-
+    
 }
