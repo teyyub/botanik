@@ -12,14 +12,10 @@ import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 
 import com.lynden.gmapsfx.javascript.object.Marker;
 import com.lynden.gmapsfx.javascript.object.MarkerOptions;
-import com.lynden.gmapsfx.shapes.Rectangle;
-import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,25 +39,7 @@ public class GMapController implements Initializable, MapComponentInitializedLis
     private GoogleMap map;
     private Stage dialogStage;
     private GmapModel gmapModel;
-
-//    private Double coorx;
-//    private Double coory;
-//
-//    public Double getCoorx() {
-//        return coorx;
-//    }
-//
-//    public void setCoorx(Double coorx) {
-//        this.coorx = coorx;
-//    }
-//
-//    public Double getCoory() {
-//        return coory;
-//    }
-//
-//    public void setCoory(Double coory) {
-//        this.coory = coory;
-//    }
+ 
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }

@@ -33,6 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Pair;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
@@ -62,7 +63,7 @@ public class TaxonController {
     private TextField author1TextField, author2TextField, author3TextField, author4TextField, author5TextField, author6TextField;
     @FXML
     private TextField species_field, sub_species_field, variety_field, sub_variety_field, forma_field, sub_forma_field;
-    
+
     @FXML
     private TextField genus_field;
     /**
@@ -73,20 +74,19 @@ public class TaxonController {
      */
     @FXML
     private Label id_label;
-    
+
     private AutoCompletionBinding<Author> bindAutoCompletion;
     private AutoCompletionBinding<Species> bindAutoCompletionSpecies;
     private AutoCompletionBinding<Genus> bindAutoCompletionGenus;
-    
+
     List<Author> authors = new ArrayList<>();
     List<Species> specieses = new ArrayList<>();
     List<Genus> genuses = new ArrayList();
-    
+
     Map<String, Number> mapGenus = new HashMap();
     Map<String, Number> mapAuthor = new HashMap();
     Map<String, Number> mapSpecies = new HashMap();
-    
-    
+
     private Stage dialogStage;
 
     public TaxonController() {
@@ -95,23 +95,26 @@ public class TaxonController {
     }
 
     @FXML
-    public void initialize() {   
+    public void initialize() {
         System.out.println("init Taxon controller");
         loadGenusAutocomplete();
-        loadAuthorAutocomplete(); 
-        loadSpeciesAutcomplete();   
+        loadAuthorAutocomplete();
+        loadSpeciesAutcomplete();
     }
-    private void loadGenuses(){
+
+    private void loadGenuses() {
         genuses = genusDAO.getGenuses();
-        for(Genus g :genuses){
+        for (Genus g : genuses) {
             mapGenus.put(g.getName(), g.getId());
         }
     }
-    private void loadGenusAutocomplete(){
+
+    private void loadGenusAutocomplete() {
         loadGenuses();
         bindAutoCompletionGenus = TextFields.bindAutoCompletion(genus_field, genuses);
     }
-    private void loadAuthorAutocomplete(){
+
+    private void loadAuthorAutocomplete() {
         loadAuthors();
         bindAutoCompletion = TextFields.bindAutoCompletion(author1TextField, authors);
         bindAutoCompletion = TextFields.bindAutoCompletion(author2TextField, authors);
@@ -120,7 +123,8 @@ public class TaxonController {
         bindAutoCompletion = TextFields.bindAutoCompletion(author5TextField, authors);
         bindAutoCompletion = TextFields.bindAutoCompletion(author6TextField, authors);
     }
-    private void loadSpeciesAutcomplete(){
+
+    private void loadSpeciesAutcomplete() {
         loadSpecies();
         bindAutoCompletionSpecies = TextFields.bindAutoCompletion(species_field, specieses);
         bindAutoCompletionSpecies = TextFields.bindAutoCompletion(sub_species_field, specieses);
@@ -129,21 +133,21 @@ public class TaxonController {
         bindAutoCompletionSpecies = TextFields.bindAutoCompletion(forma_field, specieses);
         bindAutoCompletionSpecies = TextFields.bindAutoCompletion(sub_forma_field, specieses);
     }
-    
+
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
 
     private void loadAuthors() {
         authors = authorDAO.getAuthors();
-        for (Author a :authors){
+        for (Author a : authors) {
             mapAuthor.put(a.getName(), a.getId());
         }
     }
 
     private void loadSpecies() {
-        specieses  = authorDAO.getSpecies();
-        for (Species s :specieses){
+        specieses = authorDAO.getSpecies();
+        for (Species s : specieses) {
             mapAuthor.put(s.getName(), s.getId());
         }
     }
@@ -179,7 +183,6 @@ public class TaxonController {
 
 //            Dialog<Pair<String, String>> dialog = new Dialog<>();
 //            Optional<Pair<String, String>> result = dialog.showAndWait();
-
 //            FXMLLoader loader = new FXMLLoader();
 //            loader.setLocation(Botanika.class.getResource("view/epitetDialog.fxml"));
 //
@@ -206,10 +209,12 @@ public class TaxonController {
 
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Add Author");
-            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setResizable(false);
             AuthorController controller = loader.getController();
             controller.setDialogStage(dialogStage);
 
@@ -231,7 +236,7 @@ public class TaxonController {
     @FXML
     private void addSpecies() {
         try {
-            System.out.println("addAuthor clicked");
+            System.out.println("addSpecies clicked");
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Botanika.class.getResource("view/Specy.fxml"));
 
@@ -243,12 +248,14 @@ public class TaxonController {
 //            controller.loadTaxStatusList();
 //        // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Add Specy");
+            dialogStage.setTitle("Add Species");
             dialogStage.initModality(Modality.APPLICATION_MODAL);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.setResizable(false);
             controller.setDialogStage(dialogStage);
-            
+
             dialogStage.showAndWait();
             System.out.println("close addauthor dialog");
             loadSpecies();
@@ -283,18 +290,23 @@ public class TaxonController {
 
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setResizable(false);
+
             controller.setDialogStage(dialogStage);
-            
+
             dialogStage.showAndWait();
             System.out.println("close addGenus dialog");
-            loadGenusAutocomplete(); 
+            loadGenusAutocomplete();
         } catch (Exception e) {
             System.out.println("exception in addGenusClicked " + e);
 
         }
     }
+
     @FXML
-    private void saveTaxon(){
+    private void saveTaxon() {
         Taxon t = new Taxon();
         Number genus_id = mapGenus.get(genus_field.getText());
         Rank rank = (Rank) rankCombo.getSelectionModel().getSelectedItem();
@@ -312,7 +324,7 @@ public class TaxonController {
         Number f_author_id = mapSpecies.get(author5TextField.getText());
         Number sf_author_id = mapSpecies.get(author6TextField.getText());
 //        Number accepted_taxon_id = mapSpecies.get(species_field.getText());
-        
+
         t.setGenus_id(genus_id);
         t.setRank_id(rank.getId());
         t.setTax_status_id(status.getId());

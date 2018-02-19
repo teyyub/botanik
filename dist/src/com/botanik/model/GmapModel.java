@@ -28,8 +28,8 @@ public class GmapModel {
         this.longitudeDegree = longitudeDegree;
         this.longitudeMinute = longitudeMinute;
         this.longitudeSecond = longitudeSecond;
-        degLatitude = calculateDegreeLatitude(latitudeDegree, latitudeMinute, latitudeSecond);
-        degLongitude = calculateDegreeLongitute(longitudeDegree, longitudeMinute, longitudeSecond);
+        degLatitude = latitudeDegree + latitudeMinute / 60 + latitudeSecond + 3600;//calculateDegreeLatitude(latitudeDegree, latitudeMinute, latitudeSecond);
+        degLongitude = longitudeDegree + longitudeMinute / 60 + longitudeSecond / 3600;//calculateDegreeLongitute(longitudeDegree, longitudeMinute, longitudeSecond);
     }
 
     public GmapModel() {

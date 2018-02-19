@@ -33,7 +33,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -76,8 +78,6 @@ public class SpecimenOverviewController {
     private TableColumn<Specimen, String> typusColumn;
     @FXML
     private TableColumn<Specimen, String> collectionColumn;
-    
-    
 
     private List<Region> regions = new ArrayList();
     private List<Country> countries = new ArrayList();
@@ -107,20 +107,18 @@ public class SpecimenOverviewController {
 
         PropertyValueFactory<Specimen, String> collectorProperty = new PropertyValueFactory<>("collectorName");
         collectorColumn.setCellValueFactory(collectorProperty);
-        
+
         PropertyValueFactory<Specimen, String> dateProperty = new PropertyValueFactory<>("beginDate");
         dateColumn.setCellValueFactory(dateProperty);
-        
+
         PropertyValueFactory<Specimen, String> locationProperty = new PropertyValueFactory<>("location");
         locationColumn.setCellValueFactory(locationProperty);
-        
+
         PropertyValueFactory<Specimen, String> typusProperty = new PropertyValueFactory<>("typus");
         typusColumn.setCellValueFactory(typusProperty);
-        
+
         PropertyValueFactory<Specimen, String> collectionProperty = new PropertyValueFactory<>("collection");
         collectionColumn.setCellValueFactory(collectionProperty);
-        
-        
 
     }
 
@@ -204,10 +202,14 @@ public class SpecimenOverviewController {
 //        // Create the dialog Stage.
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Spaciment");
-//        dialogStage.initModality(Modality.WINDOW_MODAL);
+
 //        dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setResizable(false);
 
             controller.setDialogStage(dialogStage);
 

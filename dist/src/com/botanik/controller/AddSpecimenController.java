@@ -46,10 +46,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
- 
 
 /**
  * FXML Controller class
@@ -192,17 +193,16 @@ public class AddSpecimenController {
     }
 
     @FXML
-    private void loadImage()  {
+    private void loadImage() {
         System.out.println("loadimage");
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
         try {
             imageView.setImage(imageFile.image(fileChooser.showOpenDialog(dialogStage))); //fileChooser.showOpenDialog(dialogStage)
-        } catch (IOException  e) {
+        } catch (IOException e) {
             System.out.println("exception ");
         }
-        
-        
+
     }
 
     private void loadTaxon() {
@@ -276,6 +276,11 @@ public class AddSpecimenController {
             controller.loadRankList();
             controller.loadTaxStatusList();
             controller.setDialogStage(dialogStage);
+//            dialogStage.setAlwaysOnTop(true);
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setResizable(false);
+
             dialogStage.showAndWait();
         } catch (Exception e) {
             System.out.println("exception in addNewTaxonClicked " + e);
@@ -378,7 +383,9 @@ public class AddSpecimenController {
             dialogStage.setTitle("Add First Collector");
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setResizable(false);
             DialogController controller = loader.getController();
             controller.setButton_index(1);
             controller.setDialogStage(dialogStage);
@@ -413,8 +420,10 @@ public class AddSpecimenController {
             dialogStage.setTitle("Add New Collector");
             dialogStage.setResizable(false);
             Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
-
+            dialogStage.setScene(scene);            
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.initModality(Modality.APPLICATION_MODAL);
+            dialogStage.setResizable(false);
             controller.setCollector(collector);
             controller.setDialogStage(dialogStage);
             dialogStage.showAndWait();
@@ -488,9 +497,6 @@ public class AddSpecimenController {
                 System.out.println("gen_id " + gen_id);
 
                 Number taxon_id = taxonMap.get(taxon_field.getText());
- 
-
-             
 
                 firstCollector_id = (firstCollectorsMap.get(first_collector_field.getText()));
                 addCollector_id = (addCollectorMap.get(add_collector_field.getText()));
@@ -498,28 +504,23 @@ public class AddSpecimenController {
                 if (begin_date.getValue() != null) {
                     LocalDate localdate1 = begin_date.getValue();
                     date1 = Date.from(localdate1.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                     
+
                 } else {
-                   date1 = null;
+                    date1 = null;
                 }
                 if (end_date.getValue() != null) {
                     LocalDate localdate2 = end_date.getValue();
                     date2 = Date.from(localdate2.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                    
+
                 } else {
                     date2 = null;
                 }
 
-           
-                
-                 
-                
                 GmapModel gmapModel = new GmapModel(
-                        Double.valueOf(n1_field.getText()) , Double.valueOf(n2_field.getText()),
-                        Double.valueOf(n3_field.getText()), Double.valueOf(e1_field.getText()), 
+                        Double.valueOf(n1_field.getText()), Double.valueOf(n2_field.getText()),
+                        Double.valueOf(n3_field.getText()), Double.valueOf(e1_field.getText()),
                         Double.valueOf(e2_field.getText()), Double.valueOf(e3_field.getText()));
-                                                
-                 
+
                 SpecimenSaveModel saveModel = new SpecimenSaveModel(institute_id,
                         herba_no_field.getText(), collection_id, type_id, status_id,
                         country_id, region_id, voucher_id, taxon_id, def_rev_conf_field.getText(),
@@ -528,7 +529,7 @@ public class AddSpecimenController {
                         date1, date2, locality_field.getText(), annotation_field.getText(),
                         habitat_field.getText(), literature_field.getText(),
                         note_field.getText(), gmapModel, imageFile);
-                
+
                 specimenDAO.saveSpecimen(saveModel);
 
             } catch (Exception e) {
@@ -539,24 +540,66 @@ public class AddSpecimenController {
     }
 
     @FXML
-    private void showMap() throws MalformedURLException, IOException   {
-  
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Botanika.class.getResource("view/GoogleMapView.fxml"));
-        AnchorPane page = (AnchorPane) loader.load();  
-        GMapController controller = loader.getController();
-//        // Create the dialog Stage.
-        Stage dialogStage = new Stage();
-        dialogStage.setTitle("Add New Collector");
-        dialogStage.setResizable(false);
-        Scene scene = new Scene(page);
-        dialogStage.setScene(scene);
-//        controller.setCoorx(result1);
-//        controller.setCoory(result2);
-//            controller.setCollector(collector);
-        controller.setDialogStage(dialogStage);
-        dialogStage.showAndWait();
+    private void showMap() throws MalformedURLException, IOException {
+        if (isMapValid()) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Botanika.class.getResource("view/GoogleMapView.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+            GMapController controller = loader.getController();
 
+//        // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Show in Map");
+            dialogStage.setResizable(false);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.initStyle(StageStyle.UTILITY);
+            dialogStage.setResizable(false);
+
+            controller.setDialogStage(dialogStage);
+
+            dialogStage.showAndWait();
+        }
+
+    }
+
+    private boolean isMapValid() {
+        String errorMessage = "";
+        if (n1_field.getText().trim() == null || n1_field.getText().trim().length() == 0) {
+            errorMessage += "Field value is invalid";
+        }
+        if (n2_field.getText().trim() == null || n2_field.getText().trim().length() == 0) {
+            errorMessage += "Field value is invalid";
+        }
+        if (n3_field.getText().trim() == null || n3_field.getText().trim().length() == 0) {
+            errorMessage += "Field value is invalid";
+        }
+
+        if (e1_field.getText().trim() == null || e1_field.getText().trim().length() == 0) {
+            errorMessage += "Field value is invalid";
+        }
+        if (e2_field.getText().trim() == null || e2_field.getText().trim().length() == 0) {
+            errorMessage += "Field value is invalid";
+        }
+
+        if (e3_field.getText().trim() == null || e3_field.getText().trim().length() == 0) {
+            errorMessage += "Field value is invalid";
+        }
+        if (errorMessage.length() != 0) {
+//            return true;
+//        } else {
+            // Show the error message.
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(dialogStage);
+            alert.setTitle("Invalid Fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(errorMessage);
+
+            alert.showAndWait();
+
+            return false;
+        }
+        return true;
     }
 
     private boolean isInputValid() {
